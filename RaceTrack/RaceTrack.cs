@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Sources;
 using RaceTrack.RaceTrack.Cars;
 using RaceTrack.RaceTrack.Drivers;
 
@@ -26,6 +27,7 @@ namespace RaceTrack.RaceTrack
             Drivers.Add(new FarmerJoe(new Tractor()));
             Drivers.Add(new Antonio(new FordGt()));
             Drivers.Add(new SoccerMom(new Minivan()));
+            Drivers.Add(new Mascot(new RaceLawnMower()));
         }
 
         public void DriversReady()
@@ -60,6 +62,7 @@ namespace RaceTrack.RaceTrack
             foreach (var driver in Drivers)
             {
                 driver.Stop();
+                driver.StopEngine();
             }
             Thread.Sleep(1000);
         }
